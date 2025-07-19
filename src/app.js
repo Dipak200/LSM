@@ -31,6 +31,10 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
+app.get('/', (req, res) => {
+  res.send('Welcome to LMS API');
+});
+
 app.use('/api/', limiter);
 
 // Body parsing middleware
