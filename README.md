@@ -237,18 +237,18 @@ Quiz Endpoints
     id: Quiz ID (required)
     Input:
     json
-    {
-    "answers": [
         {
-        "question_id": "question_id_1",
-        "selected_option": 0
-        },
-        {
-        "question_id": "question_id_2",
-        "selected_option": 2
+        "answers": [
+            {
+            "question_id": "question_id_1",
+            "selected_option": 0
+            },
+            {
+            "question_id": "question_id_2",
+            "selected_option": 2
+            }
+        ]
         }
-    ]
-    }
     Field Details:
     answers: Array of answer objects (required, minimum 1)
     question_id: Question ID (required)
@@ -260,3 +260,28 @@ Quiz Endpoints
     Path Parameters:
     id: Quiz ID (required)
     Input: None
+
+Progress EndPoint
+    Get User Dashboard
+    GET /api/progress/dashboard
+    Authentication: Bearer Token Required
+    Input: None
+    Description: Get comprehensive dashboard data including:
+    Total courses enrolled
+    Completed courses count
+    In-progress courses
+    Total lessons completed
+    Quiz attempts and average scores
+    Recent activities
+
+    Get Course Progress
+    GET /api/progress/courses/:courseId
+    Authentication: Bearer Token Required
+    Path Parameters:
+    courseId: Course ID (required)
+    Input: None
+    Description: Get detailed progress for a specific course including:
+    Completion percentage
+    Lessons completed vs total lessons
+    Quiz attempts and scores
+    Last accessed date
